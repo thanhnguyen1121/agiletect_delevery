@@ -3,16 +3,13 @@ part 'agent_model.g.dart';
 
 @JsonSerializable()
 class AgentModel {
-  String firstName;
-  String lastName;
-  String email;
+  String avatar;
+  String author;
   String phoneNumber;
-  String usreName;
-  String password;
-  String licencePlate;
+  bool isOnline;
 
-  AgentModel(this.firstName, this.lastName, this.email, this.phoneNumber,
-      this.usreName, this.password, this.licencePlate);
+
+  AgentModel(this.avatar, this.author, this.phoneNumber, this.isOnline);
 
   factory AgentModel.fromJson(Map<String, dynamic> json) => _$AgentModelFromJson(json);
 

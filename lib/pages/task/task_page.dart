@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app_agiletech_delivery/data/bloc/task_bloc.dart';
 import 'package:flutter_app_agiletech_delivery/data/datasources/task_model_datasource.dart';
 import 'package:flutter_app_agiletech_delivery/data/models/task_model.dart';
+import 'package:flutter_app_agiletech_delivery/pages/task/create_task_page.dart';
 import 'package:flutter_app_agiletech_delivery/pages/task/task_state.dart';
 import 'package:flutter_app_agiletech_delivery/widgets/loading_widget.dart';
 import 'package:flutter_app_agiletech_delivery/widgets/my_error_widget.dart';
@@ -34,9 +35,10 @@ class _TaskPageState extends State<TaskPage> {
       return ListView.builder(
           itemCount: taskModels.length,
           itemBuilder: (context, index) {
-            return ListTile(
-              title: TaskWidget(taskModels[index]),
-            );
+            return TaskWidget(taskModels[index]);
+            //   ListTile(
+            //   title: TaskWidget(taskModels[index]),
+            // );
           });
     };
     return Scaffold(
@@ -44,7 +46,12 @@ class _TaskPageState extends State<TaskPage> {
         centerTitle: true,
         title: Text("Task"),
         brightness: Brightness.dark,
-        actions: [IconButton(icon: Icon(Icons.add), onPressed: () {})],
+        actions: [IconButton(icon: Icon(Icons.add), onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CreateTaskPage()),
+          );
+        })],
       ),
       body: SafeArea(
         child: BlocProvider.value(

@@ -8,23 +8,17 @@ part of 'agent_model.dart';
 
 AgentModel _$AgentModelFromJson(Map<String, dynamic> json) {
   return AgentModel(
-    json['firstName'] as String,
-    json['lastName'] as String,
-    json['email'] as String,
+    json['avatar'] as String,
+    json['author'] as String,
     json['phoneNumber'] as String,
-    json['usreName'] as String,
-    json['password'] as String,
-    json['licencePlate'] as String,
+    json['isOnline'] as bool,
   );
 }
 
 Map<String, dynamic> _$AgentModelToJson(AgentModel instance) =>
     <String, dynamic>{
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'email': instance.email,
+      'avatar': instance.avatar,
+      'author': instance.author,
       'phoneNumber': instance.phoneNumber,
-      'usreName': instance.usreName,
-      'password': instance.password,
-      'licencePlate': instance.licencePlate,
+      'isOnline': instance.isOnline,
     };
