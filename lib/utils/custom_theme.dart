@@ -34,6 +34,7 @@ class CustomTheme with ChangeNotifier {
           selectedItemColor: Color(0xff2F80ED),
           unselectedItemColor:  Colors.white38,
         ),
+
         buttonColor: Color(0xff2F80ED),
         colorScheme: ColorScheme.light(
             onPrimary: Colors.white,
