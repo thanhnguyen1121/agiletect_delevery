@@ -21,6 +21,7 @@ class CustomTheme with ChangeNotifier {
   static ThemeData get light {
     return ThemeData.light().copyWith();
   }
+
   static ThemeData get dark {
     return ThemeData.light().copyWith(
         bottomAppBarColor: Color(0xff283149),
